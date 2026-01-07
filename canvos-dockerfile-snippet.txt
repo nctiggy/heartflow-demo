@@ -1,0 +1,42 @@
+# ============================================================
+# HeartFlow Demo Service Integration for CanvOS Dockerfile
+# ============================================================
+# Add these lines to your CanvOS Dockerfile to include the
+# HeartFlow demo service as a systemd service on the edge node.
+#
+# This service runs on port 8080 and displays a branded page
+# showing "Running on: systemd" to demonstrate workload
+# deployment via CanvOS customization.
+# ============================================================
+
+# --- Add this section to your CanvOS Dockerfile ---
+
+# Download and install HeartFlow demo service
+ARG HEARTFLOW_VERSION=1.0.0
+RUN curl -L -o /usr/local/bin/heartflow-demo \
+    https://github.com/nctiggy/heartflow-demo/releases/download/v${HEARTFLOW_VERSION}/heartflow-demo-linux-amd64 && \
+    chmod +x /usr/local/bin/heartflow-demo
+
+# Copy systemd service file
+COPY <<'EOF' /etc/systemd/system/heartflow-demo.service
+[Unit]
+Description=HeartFlow Demo Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/heartflow-demo
+Restart=always
+RestartSec=5
+Environment=PORT=8080
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Enable the service
+RUN systemctl enable heartflow-demo.service
+
+# --- End of HeartFlow integration ---
