@@ -12,7 +12,7 @@ import (
 //go:embed templates/*
 var templateFS embed.FS
 
-var version = "2.0.0"
+var version = "1.0.0"
 
 type PageData struct {
 	Runtime      string

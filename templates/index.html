@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HeartFlow Demo v2 - 16 Years</title>
+    <title>HeartFlow Demo</title>
     <link rel="icon" type="image/png" href="https://www.heartflow.com/wp-content/uploads/2025/02/cropped-favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,17 +24,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-        }
-
-        #confetti-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 100;
         }
 
         .gradient-overlay {
@@ -44,42 +33,11 @@
             right: 0;
             bottom: 0;
             background: linear-gradient(45deg,
-                rgba(3, 193, 155, 0.15) 0%,
+                rgba(0, 100, 188, 0.15) 0%,
                 rgba(85, 0, 196, 0.15) 50%,
-                rgba(204, 0, 255, 0.1) 100%);
+                rgba(132, 2, 164, 0.1) 100%);
             pointer-events: none;
             z-index: 0;
-        }
-
-        .anniversary-banner {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(90deg, #ffd700, #ffec8b, #ffd700);
-            color: #1a0a2e;
-            padding: 12px 40px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            z-index: 50;
-            box-shadow: 0 4px 30px rgba(255, 215, 0, 0.5);
-            animation: bannerShine 3s ease-in-out infinite;
-            text-align: center;
-        }
-
-        .anniversary-banner .years {
-            font-size: 1.4rem;
-            display: block;
-            background: linear-gradient(45deg, #5500c4, #cc00ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        @keyframes bannerShine {
-            0%, 100% { box-shadow: 0 4px 30px rgba(255, 215, 0, 0.5); }
-            50% { box-shadow: 0 4px 50px rgba(255, 215, 0, 0.9), 0 0 80px rgba(255, 215, 0, 0.4); }
         }
 
         .container {
@@ -88,68 +46,24 @@
             text-align: center;
             padding: 40px;
             max-width: 800px;
-            margin-top: 60px;
         }
 
         .logo-container {
             margin-bottom: 40px;
-            position: relative;
         }
 
         .heartflow-logo {
             height: 80px;
             margin-bottom: 15px;
             filter: drop-shadow(0 4px 20px rgba(255, 255, 255, 0.3));
-            animation: logoPulse 3s ease-in-out infinite;
-        }
-
-        @keyframes logoPulse {
-            0%, 100% { filter: drop-shadow(0 4px 20px rgba(255, 255, 255, 0.3)); }
-            50% { filter: drop-shadow(0 4px 30px rgba(255, 215, 0, 0.5)); }
-        }
-
-        .v2-badge {
-            display: inline-block;
-            background: linear-gradient(45deg, #03c19b, #00d4aa);
-            color: #000;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(3, 193, 155, 0.5);
-            animation: glow 2s ease-in-out infinite;
-            margin-top: 10px;
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 4px 15px rgba(3, 193, 155, 0.5); }
-            50% { box-shadow: 0 4px 25px rgba(3, 193, 155, 0.8); }
         }
 
         .tagline {
             font-size: 1.5rem;
             font-weight: 300;
             color: #03c19b;
-            margin-top: 15px;
+            margin-top: 10px;
             letter-spacing: 2px;
-        }
-
-        .enhanced-tag {
-            display: inline-block;
-            background: rgba(255, 215, 0, 0.2);
-            border: 1px solid #ffd700;
-            color: #ffd700;
-            padding: 3px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            margin-left: 10px;
-            vertical-align: middle;
-            animation: sparkle 2s ease-in-out infinite;
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
         }
 
         .card {
@@ -158,30 +72,7 @@
             border-radius: 20px;
             padding: 40px;
             margin-top: 40px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent 40%,
-                rgba(255, 215, 0, 0.1) 50%,
-                transparent 60%
-            );
-            animation: cardShine 4s ease-in-out infinite;
-        }
-
-        @keyframes cardShine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .runtime-badge {
@@ -191,8 +82,6 @@
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
         }
 
         .runtime-systemd {
@@ -201,7 +90,7 @@
         }
 
         .runtime-kubernetes {
-            background: linear-gradient(45deg, #03c19b, #00d4aa);
+            background: linear-gradient(45deg, #03c19b, #0064bc);
             box-shadow: 0 4px 20px rgba(3, 193, 155, 0.4);
         }
 
@@ -211,8 +100,6 @@
             background: rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             text-align: left;
-            position: relative;
-            z-index: 1;
         }
 
         .status-row {
@@ -249,44 +136,16 @@
         }
 
         .heart-icon {
-            color: #ffd700;
-            display: inline-block;
-            animation: heartBeat 1.5s ease-in-out infinite;
-        }
-
-        @keyframes heartBeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.2); }
-            50% { transform: scale(1); }
-            75% { transform: scale(1.2); }
-        }
-
-        .celebration-text {
-            position: relative;
-            z-index: 1;
-        }
-
-        .celebration-text h2 {
-            font-weight: 400;
-            margin-bottom: 10px;
+            color: #cc00ff;
         }
     </style>
 </head>
 <body>
-    <canvas id="confetti-canvas"></canvas>
     <div class="gradient-overlay"></div>
-
-    <div class="anniversary-banner">
-        🎉 CELEBRATING <span class="years">16 YEARS</span> OF DECISIVE CORONARY CARE 🎉
-    </div>
-
     <div class="container">
         <div class="logo-container">
             <img src="https://www.heartflow.com/wp-content/uploads/2025/01/heartflow_logo_white.svg" alt="HeartFlow" class="heartflow-logo">
-            <div>
-                <span class="v2-badge">v2.0</span>
-            </div>
-            <div class="tagline">SINCE 2010 <span class="enhanced-tag">✨ ANNIVERSARY EDITION</span></div>
+            <div class="tagline">DECISIVE CORONARY CARE</div>
         </div>
 
         <div class="card">
@@ -294,12 +153,10 @@
                 Running on: {{.Runtime}}
             </div>
 
-            <div class="celebration-text">
-                <h2>Edge Demo Service</h2>
-                <p style="color: rgba(255,255,255,0.7);">
-                    This service demonstrates workload deployment on Spectro Cloud Palette Edge
-                </p>
-            </div>
+            <h2 style="font-weight: 400; margin-bottom: 10px;">Edge Demo Service</h2>
+            <p style="color: rgba(255,255,255,0.7);">
+                This service demonstrates workload deployment on Spectro Cloud Palette Edge
+            </p>
 
             <div class="status-info">
                 <div class="status-row">
@@ -330,97 +187,5 @@
             <span class="heart-icon">&#9829;</span> Demo for Spectro Cloud Edge Workshop
         </div>
     </div>
-
-    <script>
-        // Confetti animation
-        const canvas = document.getElementById('confetti-canvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        // HeartFlow brand colors + gold for celebration
-        const colors = ['#0064bc', '#5500c4', '#cc00ff', '#03c19b', '#ffd700', '#ffec8b'];
-
-        class Confetti {
-            constructor() {
-                this.reset();
-            }
-
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height - canvas.height;
-                this.size = Math.random() * 10 + 5;
-                this.speedY = Math.random() * 3 + 2;
-                this.speedX = Math.random() * 2 - 1;
-                this.color = colors[Math.floor(Math.random() * colors.length)];
-                this.rotation = Math.random() * 360;
-                this.rotationSpeed = Math.random() * 10 - 5;
-                this.shape = Math.random() > 0.5 ? 'rect' : 'circle';
-            }
-
-            update() {
-                this.y += this.speedY;
-                this.x += this.speedX;
-                this.rotation += this.rotationSpeed;
-
-                if (this.y > canvas.height + 20) {
-                    this.reset();
-                }
-            }
-
-            draw() {
-                ctx.save();
-                ctx.translate(this.x, this.y);
-                ctx.rotate(this.rotation * Math.PI / 180);
-                ctx.fillStyle = this.color;
-
-                if (this.shape === 'rect') {
-                    ctx.fillRect(-this.size / 2, -this.size / 4, this.size, this.size / 2);
-                } else {
-                    ctx.beginPath();
-                    ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-
-                ctx.restore();
-            }
-        }
-
-        const confettiPieces = [];
-        for (let i = 0; i < 100; i++) {
-            confettiPieces.push(new Confetti());
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            confettiPieces.forEach(piece => {
-                piece.update();
-                piece.draw();
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        // Burst effect on load
-        setTimeout(() => {
-            for (let i = 0; i < 50; i++) {
-                const burst = new Confetti();
-                burst.x = canvas.width / 2;
-                burst.y = canvas.height / 2;
-                burst.speedX = (Math.random() - 0.5) * 15;
-                burst.speedY = (Math.random() - 0.5) * 15 - 5;
-                confettiPieces.push(burst);
-            }
-        }, 500);
-    </script>
 </body>
 </html>
